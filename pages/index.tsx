@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import type Pokemon from "../types/Pokemon";
 import type Poke_Table from "../types/PokeTable";
-import PokemonRow from "../components/PokemonRow";
 import PokeTable from "../components/PokeTable";
 
 const Home: NextPage = () => {
@@ -20,14 +19,21 @@ const Home: NextPage = () => {
   };
 
   const squirtle: Pokemon = {
-    id: 4,
+    id: 7,
     name: "Squirtle",
     types: ["water", "red", "green", "blue", "yellow"],
     sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
   };
 
+  const caterpie: Pokemon = {
+    id: 10,
+    name: "Caterpie",
+    types: ["grass", "red", "green", "blue", "yellow"],
+    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png",
+  };
+
   const pokeTable: Poke_Table = {
-    pokeTable: [bulbasaur, charmander, squirtle],
+    pokeTable: [bulbasaur, charmander, squirtle, caterpie],
   };
 
   return <PokeTable {...pokeTable} />;
