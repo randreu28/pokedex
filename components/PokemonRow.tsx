@@ -13,9 +13,16 @@ const PokemonRow: FC<Pokemon> = ({ id, name, sprite, types }) => {
         />
         <p className="text-gray-500">#{id.toString()}</p>
         <h1 className="text-2xl">{name}</h1>
-        <p className="rounded bg-gray-200 text-sm w-20 text-center px-3 py-1">
-          {types}
-        </p>
+        <div className="flex flex-row gap-2 flex-wrap max-w-xs">
+          {types.map((type) => (
+            <p
+              key={type}
+              className="rounded bg-gray-200 text-sm w-20 text-center px-3 py-1 mt-3"
+            >
+              {type}
+            </p>
+          ))}
+        </div>
       </div>
     </>
   );
