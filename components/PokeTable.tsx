@@ -5,10 +5,10 @@ import PokemonRow from "./PokemonRow";
 const PokeTable: FC<Poke_Table> = ({ pokeTable }) => {
   return (
     <>
-      <div className="grid grid-cols-3">
-        <PokemonRow {...pokeTable[0]} />
-        <PokemonRow {...pokeTable[1]} />
-        <PokemonRow {...pokeTable[2]} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
+        {pokeTable.map((row) => {
+          return <PokemonRow {...row} key={row.id.toString()} />;
+        })}
       </div>
     </>
   );
