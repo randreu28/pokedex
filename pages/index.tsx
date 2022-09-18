@@ -1,42 +1,47 @@
 import type { NextPage } from "next";
 import type Pokemon from "../types/Pokemon";
 import type PokeTableProps from "../types/PokeTableProps";
-import PokeTable from "../components/PokeTable";
+
+import FilterablePokedexTable from "../components/FilterablePokedexTable";
+
+const bulbasaur: Pokemon = {
+  id: 1,
+  name: "Bulbasaur",
+  types: ["grass", "poison"],
+  sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+};
+
+const charmander: Pokemon = {
+  id: 4,
+  name: "Charmander",
+  types: ["fire", "normal"],
+  sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
+};
+
+const squirtle: Pokemon = {
+  id: 7,
+  name: "Squirtle",
+  types: ["water"],
+  sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
+};
+
+const caterpie: Pokemon = {
+  id: 10,
+  name: "Caterpie",
+  types: ["grass", "normal"],
+  sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png",
+};
+
+const pokeTable: PokeTableProps = {
+  pokeTable: [bulbasaur, charmander, squirtle, caterpie],
+};
 
 const Home: NextPage = () => {
-  const bulbasaur: Pokemon = {
-    id: 1,
-    name: "Bulbasaur",
-    types: ["grass", "red", "green", "blue", "yellow"],
-    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
-  };
-
-  const charmander: Pokemon = {
-    id: 4,
-    name: "Charmander",
-    types: ["fire", "red", "green", "blue", "yellow"],
-    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
-  };
-
-  const squirtle: Pokemon = {
-    id: 7,
-    name: "Squirtle",
-    types: ["water", "red", "green", "blue", "yellow"],
-    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
-  };
-
-  const caterpie: Pokemon = {
-    id: 10,
-    name: "Caterpie",
-    types: ["grass", "red", "green", "blue", "yellow"],
-    sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png",
-  };
-
-  const pokeTable: PokeTableProps = {
-    pokeTable: [bulbasaur, charmander, squirtle, caterpie],
-  };
-
-  return <PokeTable {...pokeTable} />;
+  return (
+    <>
+      <FilterablePokedexTable {...pokeTable} />
+    </>
+  );
 };
 
 export default Home;
