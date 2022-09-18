@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import type Pokemon from "../types/Pokemon";
-import type Poke_Table from "../types/PokeTable";
+import type PokeTableProps from "../types/PokeTableProps";
 import PokeTable from "../components/PokeTable";
 
 const Home: NextPage = () => {
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
     sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png",
   };
 
-  const pokeTable: Poke_Table = {
+  const pokeTable: PokeTableProps = {
     pokeTable: [bulbasaur, charmander, squirtle, caterpie],
   };
 

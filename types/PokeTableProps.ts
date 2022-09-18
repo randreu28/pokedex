@@ -1,7 +1,7 @@
 import type Pokemon from "./Pokemon"
 
-interface Poke_Table {
+interface PokeTableProps {
   pokeTable: Pokemon[];
 }
 
-export default Poke_Table;
+export default PokeTableProps;

@@ -1,7 +1,7 @@
-import type Poke_Table from "../types/PokeTable";
+import type PokeTableProps from "../types/PokeTableProps";
 import PokemonRow from "./PokemonRow";
 
-function PokeTable({ pokeTable }: Poke_Table) {
+function PokeTable({ pokeTable }: PokeTableProps) {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
