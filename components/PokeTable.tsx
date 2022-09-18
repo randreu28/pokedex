@@ -1,8 +1,7 @@
 import type Poke_Table from "../types/PokeTable";
-import type { FC } from "react";
 import PokemonRow from "./PokemonRow";
 
-const PokeTable: FC<Poke_Table> = ({ pokeTable }) => {
+function PokeTable({ pokeTable }: Poke_Table) {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3">
@@ -12,6 +11,6 @@ const PokeTable: FC<Poke_Table> = ({ pokeTable }) => {
       </div>
     </>
   );
-};
+}
 
 export default PokeTable;

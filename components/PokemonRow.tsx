@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import type { FC } from "react";
 import type Pokemon from "../types/Pokemon";
 
-const PokemonRow: FC<Pokemon> = ({ id, name, sprite, types }) => {
+function PokemonRow({ id, name, sprite, types }: Pokemon) {
   return (
     <>
       <div className="flex gap-5 p-5">
@@ -28,6 +27,6 @@ const PokemonRow: FC<Pokemon> = ({ id, name, sprite, types }) => {
       </div>
     </>
   );
-};
+}
 
 export default PokemonRow;
