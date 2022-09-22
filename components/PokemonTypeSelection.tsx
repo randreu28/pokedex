@@ -1,20 +1,13 @@
 import type PokemonTypeSelectionProps from "../types/PokemonTypeSelectionProps";
 
-const pokemonTypes: (string | undefined)[] = [
-  undefined,
-  "grass",
-  "fire",
-  "water",
-  "normal",
-];
-
 function PokemonTypeSelection({
   selectType,
   selectedType,
+  allTypes,
 }: PokemonTypeSelectionProps) {
   return (
     <div className="flex gap-5 pt-5 justify-center mx-auto w-full flex-wrap max-w-xl">
-      {pokemonTypes.map((type: string | undefined, id: number) => {
+      {allTypes.map((type: string | undefined, id: number) => {
         return (
           <button
             key={id}

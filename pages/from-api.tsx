@@ -1,7 +1,7 @@
-import type PokeTableProps from "../types/PokeTableProps";
+import type FilterPokeTableProps from "../types/FilterPokeTableProps";
 import FilterablePokedexTable from "../components/FilterablePokedexTable";
 
-function FromAPI(pokeTable: PokeTableProps) {
+function FromAPI(pokeTable: FilterPokeTableProps) {
   return (
     <>
       <FilterablePokedexTable {...pokeTable} />
@@ -35,7 +35,7 @@ export const getStaticProps = async () => {
     await parseData(res);
   }
 
-  const pokeTable: PokeTableProps = {
+  const pokeTable: FilterPokeTableProps = {
     pokeTable: _pokeTable,
   };
 

@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import type Pokemon from "../types/Pokemon";
-import type PokeTableProps from "../types/PokeTableProps";
+import type FilterPokeTableProps from "../types/FilterPokeTableProps";
 
 import FilterablePokedexTable from "../components/FilterablePokedexTable";
 
@@ -32,7 +32,7 @@ const caterpie: Pokemon = {
   sprite: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png",
 };
 
-const pokeTable: PokeTableProps = {
+const pokeTable: FilterPokeTableProps = {
   pokeTable: [bulbasaur, charmander, squirtle, caterpie],
 };
 
