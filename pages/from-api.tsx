@@ -1,4 +1,5 @@
 import type FilterPokeTableProps from "../types/FilterPokeTableProps";
+
 import FilterablePokedexTable from "../components/FilterablePokedexTable";
 
 function FromAPI(pokeTable: FilterPokeTableProps) {
@@ -9,7 +10,7 @@ function FromAPI(pokeTable: FilterPokeTableProps) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async (context: any) => {
   let _pokeTable: any = [];
 
   function parseData(res: any) {
@@ -29,7 +30,11 @@ export const getStaticProps = async () => {
     });
   }
 
-  for (let i = 1; i <= 18; i++) {
+  const start = context?.query?.start ? parseInt(context.query.start) : 1;
+
+  const end = context?.query?.end ? parseInt(context.query.end) : 18;
+
+  for (let i = start; i <= end; i++) {
     const rawRes = await fetch("https://pokeapi.co/api/v2/pokemon/" + i);
     const res = await rawRes.json();
     await parseData(res);
