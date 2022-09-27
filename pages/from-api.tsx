@@ -1,10 +1,12 @@
 import type FilterPokeTableProps from "../types/FilterPokeTableProps";
 
 import FilterablePokedexTable from "../components/FilterablePokedexTable";
+import ApiParams from "../components/ApiParams";
 
 function FromAPI(pokeTable: FilterPokeTableProps) {
   return (
     <>
+      <ApiParams />
       <FilterablePokedexTable {...pokeTable} />
     </>
   );
