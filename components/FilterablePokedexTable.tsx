@@ -48,10 +48,10 @@ function FilterablePokedexTable(pokeTable: FilterPokeTableProps) {
   };
 
   return (
-    <>
+    <div className="space-y-8">
       <PokemonTypeSelection {...PokemonTypeSelectionProps} />
       <PokeTable {...filteredTable} />
-    </>
+    </div>
   );
 }
 export default FilterablePokedexTable;
