@@ -10,6 +10,9 @@ function Navbar() {
         <Link className="hover:underline" href="/from-api">
           <a className="hover:underline">From API</a>
         </Link>
+        <Link className="hover:underline" href="/find-my-pokemon">
+          <a className="hover:underline">Find my pokemon</a>
+        </Link>
       </ul>
       <h1 className="text-center font-bold text-5xl">Pokedex app</h1>
       <p className="text-gray-500 text-center max-w-3xl mx-auto">
