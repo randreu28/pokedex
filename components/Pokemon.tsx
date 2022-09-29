@@ -5,20 +5,20 @@ function PokeStandAlone(pokemon: Pokemon | null) {
   if (pokemon?.id) {
     return (
       <div className="h-[calc(100vh-300px)] flex">
-        <div className="m-auto flex gap-5">
+        <div className="m-auto flex flex-col md:flex-row gap-5">
           <img
-            className="bg-gray-200 rounded-lg p-5"
+            className="bg-gray-200 rounded-lg p-5 h-64 w-64 md:h-full md:w-full"
             alt=""
             src={pokemon.sprite}
           />
           <div className="flex flex-col">
             <p className="text-gray-500">#{pokemon.id.toString()}</p>
-            <h1 className="text-4xl">{pokemon.name}</h1>
+            <h1 className="text-4xl capitalize">{pokemon.name}</h1>
             <div className="flex flex-row gap-2 flex-wrap max-w-xs">
               {pokemon.types.map((type) => (
                 <p
                   key={type}
-                  className="rounded bg-gray-200 text-lg w-20 text-center px-3 py-1 mt-3"
+                  className="rounded bg-gray-200 text-lg w-20 text-center px-3 py-1 mt-3 capitalize"
                 >
                   {type}
                 </p>

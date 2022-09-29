@@ -3,7 +3,7 @@ import Link from "next/link";
 function Navbar() {
   return (
     <nav className="m-auto space-y-10 container p-5">
-      <ul className="flex gap-5 justify-between text-xl text-blue-500">
+      <ul className="flex flex-col text-center md:flex-row md:text-left gap-5 justify-between text-xl text-blue-500">
         <Link href="/">
           <a className="hover:underline">Static data</a>
         </Link>

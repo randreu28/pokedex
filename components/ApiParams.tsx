@@ -44,7 +44,7 @@ function ApiParams() {
           className="bg-gray-200 p-2 m-2 rounded w-fit"
           ref={startRef}
           required
-          placeholder="starting ID"
+          placeholder="Starting ID"
           type="number"
           min="1"
           max="900"
@@ -52,7 +52,7 @@ function ApiParams() {
         <input
           className="bg-gray-200 p-2 m-2 rounded w-fit"
           ref={endRef}
-          placeholder="ending ID"
+          placeholder="Ending ID"
           required
           type="number"
           min="1"

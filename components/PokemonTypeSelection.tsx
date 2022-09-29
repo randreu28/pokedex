@@ -11,7 +11,7 @@ function PokemonTypeSelection({
         return (
           <button
             key={id}
-            className={`bg-gray-200 rounded p-2 ${
+            className={`bg-gray-200 rounded p-2 capitalize ${
               selectedType == type ? "bg-gray-300" : "bg-gray-200"
             }`}
             onClick={() => {
