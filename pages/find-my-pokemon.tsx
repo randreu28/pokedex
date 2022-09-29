@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import getCleanArray from "../helpers/getCleanArray";
 
 import type PokeIdentity from "../types/PokeIdentity";
 import type Pokemon from "../types/Pokemon";
@@ -10,14 +11,6 @@ function FindMyPokemon(data: { pokemonList: PokeIdentity[] }) {
 
   async function showPokemon(pokeIdentity: PokeIdentity) {
     setIsLoading(true);
-
-    function getCleanArray({ res }: any) {
-      let cleanArray: any[] = [];
-      res.types.map((type: any) => {
-        cleanArray.push(type.type.name);
-      });
-      return cleanArray;
-    }
 
     const rawRes = await fetch(pokeIdentity.url);
     const res = await rawRes.json();

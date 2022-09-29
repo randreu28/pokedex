@@ -2,6 +2,7 @@ import type FilterPokeTableProps from "../types/FilterPokeTableProps";
 
 import FilterablePokedexTable from "../components/FilterablePokedexTable";
 import ApiParams from "../components/ApiParams";
+import getCleanArray from "../helpers/getCleanArray";
 
 function FromAPI(pokeTable: FilterPokeTableProps) {
   return (
@@ -16,18 +17,10 @@ export const getServerSideProps = async (context: any) => {
   let _pokeTable: any = [];
 
   function parseData(res: any) {
-    function getCleanArray() {
-      let cleanArray: any[] = [];
-      res.types.map((type: any) => {
-        cleanArray.push(type.type.name);
-      });
-      return cleanArray;
-    }
-
     _pokeTable.push({
       id: res.id,
       name: res.name,
-      types: getCleanArray(),
+      types: getCleanArray({ res }),
       sprite: res.sprites.other["official-artwork"].front_default,
     });
   }
