@@ -1,10 +1,37 @@
-import type PokeIdentity from "../types/PokeIdentity";
-
+import { useState } from "react";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
+
+import type PokeIdentity from "../types/PokeIdentity";
+import type Pokemon from "../types/Pokemon";
+
 function FindMyPokemon(data: { pokemonList: PokeIdentity[] }) {
-  function showPokemon() {
-    alert("funciona");
+  const [pokemon, setPokemon] = useState<null | Pokemon>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  async function showPokemon(pokeIdentity: PokeIdentity) {
+    setIsLoading(true);
+
+    function getCleanArray({ res }: any) {
+      let cleanArray: any[] = [];
+      res.types.map((type: any) => {
+        cleanArray.push(type.type.name);
+      });
+      return cleanArray;
+    }
+
+    const rawRes = await fetch(pokeIdentity.url);
+    const res = await rawRes.json();
+
+    await setPokemon({
+      id: res.id,
+      name: res.name,
+      types: getCleanArray({ res }),
+      sprite: res.sprites.other["official-artwork"].front_default,
+    });
+
+    await setIsLoading(false);
   }
+
   return (
     <>
       <div className="p-5 w-96 mx-auto">
